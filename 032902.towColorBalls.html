@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<input v-on:click="Click()" type="button" name="" id="" value="摇球" /><br>
+			第一个红色小球号码：{{red1}}<br>
+			第二个红色小球号码：{{red2}}<br>
+			第三个红色小球号码：{{red3}}<br>
+			第四个红色小球号码：{{red4}}<br>
+			第五个红色小球号码：{{red5}}<br>
+			第六个红色小球号码：{{red6}}<br>
+			第一个篮球小球号码：{{blue}}<br>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					red1:'',
+					red2:'',
+					red3:'',
+					red4:'',
+					red5:'',
+					red6:'',
+					blue:''
+				},
+				methods:{
+					Click(){
+						this.red1=Math.ceil(Math.random()*10)
+						this.red2=Math.ceil(Math.random()*10)
+						this.red3=Math.ceil(Math.random()*10)
+						this.red4=Math.ceil(Math.random()*10)
+						this.red5=Math.ceil(Math.random()*10)
+						this.red6=Math.ceil(Math.random()*10)
+						this.blue=Math.ceil(Math.random()*10)
+					}
+				}
+			})
+		</script>
+	</body>
