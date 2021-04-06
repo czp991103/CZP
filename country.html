@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			请输入的所要查询的国家的代码：
+			<input type="text" v-model="i" />
+			<p v-for="c in countries" v-if="c.id==i">
+				您输入的代码为{{c.id}},国家为{{c.country}},首都为{{c.capital}}
+			</p>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					i:'',
+					countries:[
+						{
+							id:86,
+							country:'中国',
+							capital:'北京'
+						},
+						{
+							id:1,
+							country:'美国',
+							capital:'华盛顿'
+						},
+						{
+							id:44,
+							country:'英国',
+							capital:'伦敦'
+						}
+					]
+				}
+			})
+		</script>
+		
+	</body>
+</html>
