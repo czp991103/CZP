@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<h1>外卖菜单查询</h1>
+		<div id="app">
+			请输入的所要查询的菜名信息：
+			<input type="text" v-model="i" />
+			<p v-for="m in menu" v-if="m.name==i">
+				菜品名称：{{m.name}}<br>
+				单价：{{m.price}}<br>
+				电话：{{m.phone}}
+			</p>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					i:'',
+					menu:[
+						{
+							name:'豆浆',
+							price:3,
+							phone:18812345678
+						},
+						{
+							name:'麻辣烫',
+							price:19,
+							phone:15212345678
+						},
+						{
+							name:'烤肉拌饭',
+							price:18,
+							phone:13312345678
+						},
+						{
+							name:'绿豆沙',
+							price:5,
+							phone:14212345678
+						},
+						{
+							name:'油条',
+							price:2,
+							phone:19812345678
+						}
+					]
+				}
+			})
+		</script>
+		
+	</body>
+</html>
