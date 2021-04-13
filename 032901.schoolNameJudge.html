@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title></title>
 		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 		
 	</head>
 	<body>
+		<h1>985-211大学判断</h1>
 		<div id="app">
-			<select>
-				<option value ="">广西大学</option>
-				<option value ="">湖南大学</option>
-				<option value ="">上海大学</option>
-				<option value ="">清华大学</option>
-				<option value ="">北京大学</option>
-			</select>
-			
-			
-			
-			
-			
-			
-			
+			请输入的所要查询的学校类型或学校名称：
+			<input type="text" v-model="i" />
+			<p v-for="s in schools" v-if="s.id==i || s.school==i">
+				{{s.school}}是一所{{s.id}}大学！
+			</p>
 		</div>
-		
-		
 		
 		<script type="text/javascript">
 			let v=new Vue({
 				el:'#app',
 				data:{
+					i:'',
 					schools:[
 						{
 							id:211,
-							name:'广西大学'
-						},
-						{
-							id:211,
-							name:'湖南大学'
-						},
-						{
-							id:211,
-							name:'上海大学'
+							school:'上海大学',	
 						},
 						{
 							id:985,
-							name:'清华大学'
+							school:'北京大学',	
 						},
 						{
 							id:985,
-							name:'北京大学'
+							school:'清华大学',	
 						},
+						{
+							id:211,
+							school:'湖南大学',	
+						},
+						{
+							id:211,
+							school:'广西大学',	
+						},{
+							id:211,
+							school:'西南大学',	
+						}
 					]
-				},
-				methods:{
-					
 				}
 			})
 		</script>
+		
 	</body>
 </html>
