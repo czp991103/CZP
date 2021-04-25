@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8" />
-      <title>我的一个网页</title>
-    </head>
-    <body>
-      <h1>陈泽鹏</h1>
-      <h2>学号：1830143003</h2>
-      百度（Nasdaq：BAIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，百度致力于向人们提供“简单，可依赖”的信息获取方式。
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	<body>
+		<div id="app">
+			<img src="./img/u=203643459,1752490975&fm=26&gp=0.jpg" @click="getXY" ><br>
+			您找到了{{count}}处不一样,所得分数为：{{score}}
+		</div>
+		
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					count:0,
+					score:0,
+					flag1:true,
+					flag2:true,
+					flag3:true,
+					flag4:true
+				},
+				methods:{
+					getXY : function(Event){
+							if(409<Event.clientX && Event.clientX<460 && 5<Event.clientY && Event.clientY<39 && this.flag1){
+								this.count++
+								this.score=this.score+1000
+								this.flag1=!this.flag1
+							
+							}
+							if(209<Event.clientX && Event.clientX<236 && 104<Event.clientY && Event.clientY<136 && this.flag2){
+								this.count++
+								this.score=this.score+1000
+								this.flag2=!this.flag2
+							
+							}
+							if(40<Event.clientX && Event.clientX<66 && 106<Event.clientY && Event.clientY<136 && this.flag3){
+								this.count++
+								this.score=this.score+1000
+								this.flag3=!this.flag3
+							
+							}
+							if(409<Event.clientX && Event.clientX<426 && 286<Event.clientY && Event.clientY<302 && this.flag4){
+								this.count++
+								this.score=this.score+1000
+								this.flag4=!this.flag4
+							
+							}
+							if(this.score==4000){
+								alert("恭喜你成功通关，您的总分为"+this.score)	
+							}
+					},	
+				}
+			})
+		</script>
+			
+		
+	</body>
 </html>
